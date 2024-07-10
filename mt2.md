@@ -1,41 +1,98 @@
-# ***Trabajo Practico Final de Teoria de la computacion***
+# Trabajo practico
+# Teoria de la computaciòn
+
+-----------
+
+## Mapa Conceptual
+
+```mermaid
+mindmap
+  root((Teoría de la Computación))
+    Computabilidad
+      "Estudia: Problemas resolubles"
+    Complejidad
+      "Estudia: Recursos necesarios"
+    Habilidades
+      Resolución de Problemas
+      Pensamiento Algorítmico
+      Programación
+      Análisis de Algoritmos
+    Limitaciones
+      Recursos Finitos
+      Problemas Intratables
+    Recursos
+      Tiempo
+      Espacio
+      Energía
+    Algoritmos
+      "¿Representables en lenguajes?"
+        "Sí, teóricamente en lenguajes adecuados"
+    Funciones Computables
+      "¿Cuándo?"
+        "Cuando puede ser resuelta por una máquina de Turing"
+```
+[mapa conceptual](https://www.mermaidchart.com/app/projects/5b8d1a5a-a6cd-43df-a550-027b6bbebc38/diagrams/0fbda422-f56b-4a0f-a84e-51efb1f07152/version/v0.1/edit)
+
+[editor onile mermaid](https://www.mermaidchart.com/)
 
 
-## Mapa 
+---------
+## Maquina de Turing
+
+## Tabla estandar de proteinas
+
+### Definicion:
+La traducción del ARN a proteínas es el proceso mediante el cual 
+la información genética codificada en la secuencia de ARN mensajero 
+(ARNm) se utiliza para sintetizar proteínas específicas. 
+Este proceso ocurre en los ribosomas, que actúan como las fábricas 
+celulares de proteínas. Durante la traducción, 
+los ribosomas leen secuencialmente los codones del ARNm 
+y utilizan el código genético para ensamblar una cadena 
+polipeptídica de aminoácidos, 
+siguiendo las reglas de correspondencia entre los codones 
+y los aminoácidos especificados por el ARN de transferencia (ARNt).
 
 
+| Codón de ARN                 | Aminoácido          |
+|------------------------------|---------------------|
+| AUG                          | M (Metionina)       |
+| UUU, UUC                     | F (Fenilalanina)    |
+| UUA, UUG, CUU                | L (Leucina)         |
+| UCU, UCC, UCA,               | S (Serina)          |
+| UAU, UAC                     | Y (Tirosina)        |
+| UGU, UGC                     | C (Cisteína)        |
+| UGG                          | W (Triptófano)      |
+| CCU, CCC, CCA, CCG           | P (Prolina)         |
+| CAU, CAC                     | H (Histidina)       |
+| CAA, CAG                     | Q (Glutamina)       |
+| CGU, CGC, CGA, CGG, AGA, AGG | R (Arginina)        |
+| AUU, AUC, AUA                | I (Isoleucina)      |
+| ACU, ACC, ACA, ACG           | T (Treonina)        |
+| AAU, AAC                     | N (Asparagina)      |
+| AAA, AAG                     | K (Lisina)          |
+| GAU, GAC                     | D (Ácido aspártico) |
+| GAA, GAG                     | E (Ácido glutámico) |
+| UAA, UAG, UGA                | # (Parada)          |
 
 
+#### Nucleótidos
+* A = Adenina
+* C = Citosina
+* G: Guanina
+* U: Uracilo
 
+### Codon de Inicio
++ **AUG**
 
+### Codones de terminaciòn
++ **UUU**
++ **UAG**
++ **UGA**
 
-### Tabla estandar de proteinas
+### Cadena ARN
++ ***AUGGCUAAGUUUUAA*** (cadena) -> ***MAK*** (traducion de proteina)
 
-
-| Codon (ARN)        | Aminoácido                      | 
-|--------------------|---------------------------------|
-| AUG                | Metiobnina (M)                  |
-| UUU UUC            | Fenilalanina (F)                |
-| UUA UUG            | Leucina (L)                     |
-| AUU, AUC, AUA      | Isoleucina (I)                  |
-| GUU, GUC, GUA, GUG | Valina (V)                      |
-| UCU, UCC, UCA, UCG | Serina (S)                      |
-| CCU, CCC, CCA, CCG | Prolina (P)                     |
-| ACU, ACC, ACA, ACG | Treonina (T)                    |
-| GCU, GCC, GCA, GCG | Alanina (A)                     |
-| UAU, UAC           | Tirosina (Y)                    |
-| CAU, CAC           | Histidina (H)                   |
-| UAA, UAG           | Codones de terminación (Parada) |
-
-
-
-AUG -> M (Metionina, codón de inicio)
-UUU, UUC -> F (Fenilalanina)
-UUA, UUG -> L (Leucina)
-GUU, GUC, GUA, GUG -> V (Valina)
-UCU, UCC, UCA, UCG -> S (Serina)
-CCU, CCC, CCA, CCG -> P (Prolina)
-UAA, UAG, UGA -> * (Codón de parada)GC
 
 ### Codon de IniGUU, GUC, GUA, GUG | Valina (V)   cio
 + **AUG**
@@ -49,208 +106,3 @@ UAA, UAG, UGA -> * (Codón de parada)GC
 + ***AUG*** GCU AAG UUU ***UAA*** -> Cintra entrada
 + M*A*K#
 
-
-
-
-name: ARN
-init:q0
-accept:q29
-
-q0,A
-q1,_,>
-
-q1,U
-q2,_,>
-q1,C
-q19,-,> 
-
-q2,G
-q3,M,>
-q2,C
-q16,I,>
-q2,A
-q16,I,>
-q2,U
-q16,I,>
-
-q3,A
-q1,_,>
-q3,C
-q12,_,>
-q3,U
-q4,_,>
-q3,G
-q13,_,>
-
-q4,U
-q5,_,>
-q4,A
-q8,_,>
-q4,G
-q8,_,>
-q4,C
-q10,_,>
-
-
-q5,C
-q6,F,>
-q5,U
-q6,F,>
-q5,G
-q9,L,>
-q5,A
-q19,L,>
-
-q6,U
-q4,_,>
-q6,C
-q12,_,>
-
-
-q7,A
-q28,_,>
-
-q8,U
-q7,_,>
-
-q9,A
-q1,_,>
-q9,U
-q4,_,>
-q9,G
-q7,_,>
-
-q10,U
-q11,S,>
-q10,C
-q11,S,>
-q10,A
-q11,S,>
-q10,G
-q11,S,>
-
-q11,A
-q1,_,>
-q11,U
-
-q7,_,>
-q11,G
-q13,_,>
-
-q12,A
-q26,_,>
-q12,C
-q17,_,>
-
-q13,C
-q22,_,>
-q13,G
-q23,_,>
-q13,U
-q14,_,>
-
-q14,C
-q15,V,>
-q14,A
-q15,V,>
-q14,G
-q15,V,>
-q14,U
-q15,V,>
-
-q15,A
-q1,_,>
-q15,G
-q13,_,>
-q15,U
-q7,_,>
-
-q16,A
-q1,_,>
-q16,C
-q1,_,>
-q16,U
-q7,_,>
-q16,G
-q13,_,>
-
-q17,A
-q18,P,>
-q17,C
-q18,P,>
-q17,G
-q18,P,>
-q17,U
-q18,P,>
-
-q18,A
-q1,_,>
-q18,U
-q7,_,>
-
-q19,A
-q21,T,>
-q19,G
-q21,T,>
-q19,C
-q21,T,>
-q19,U
-q21,T,>
-
-q21,A
-q1,_,>
-q21,G
-q13,_,>
-q21,C
-q4,_,>
-q21,U
-q7,_,>
-
-q22,A
-q23,A,>
-q22,C
-q23,A,>
-q22,G
-q23,A,>
-q22,U
-q23,A,>
-
-q23,C
-q1,_,>
-q23,U
-q7,_,>
-
-q24,U
-q25,Y,>
-q24,C
-q25,Y,>
-
-q25,U
-q7,_,>
-q25,A
-q1,_,>
-q25,G
-q13,_,>
-q25,C
-q12,_,>
-
-q26,A
-q1,_,>
-q26,U
-q27,H,>
-q26,C
-q27,H,>
-q26,G
-q13,_,>
-
-q27,A
-q1,_,>
-q27,U
-q7,_,>
-q27,C
-q12,_,>
-
-q28,A
-q29,#,>
-q28,G
-q29,#,>
